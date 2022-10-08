@@ -9,6 +9,9 @@ if(isset($_POST['passphrase'])){
     } elseif($_POST['passphrase'] == "profKern4!"){
         $_SESSION['who'] = "prof";
         $_SESSION['connect'] = true;
+        header('Location: prof.php');
+    } else{
+        echo "Veuillez rentrez un mot de passe valide";
     }
 }
 ?>
