@@ -16,14 +16,21 @@ if(isset($_POST['passphrase'])){
 }
 ?>
 
+<!DOCTYPE html>
 <html>
     <head>
-        <body>
-            <h1>Bienvenue sur CasierParfait !</h1>
-            <form action="" method="post">
-                <input type="text" name="passphrase" placeholder="Entrez le mot de passe">
-                <input type="submit" name="send" value="Valider !">
-            </form>
-        </body>
+        <meta charset="utf-8" />
+        <title>Casier Parfait </title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />  
+        <link rel="stylesheet" href="./index.css">
     </head>
+    <body>
+        <section>
+            <h1>Bienvenue sur CasierParfait ! </h1>
+                <form action="" method="post">
+                    <input type="text" name="passphrase" placeholder="Entrez le mot de passe">
+                    <input type="submit" name="send" value="Valider !">
+                </form>
+        </section>
+    </body>
 </html>
