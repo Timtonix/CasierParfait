@@ -63,14 +63,15 @@ if ($_SESSION['connect']){
             <body>
                 <h1>Bienvenue élève !</h1>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <input type="text" name="nom" required><br>
-                    <input type="text" name="prenom" required><br>
-                    <label for="classe">Votre classe:</label><br>
+                    <label for="nom">Entrez votre nom : </label><input type="text" name="nom" id="nom" required><br>
+                    <label for="prenom">Entrez votre prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
+                    <label for="classe">Votre classe:</label>
                     <select name="classe" id="classe" required>
                         <option value="jambon">--Veuillez choisir une classe--</option>
                         <option value="4">Seconde 4</option>
-                    </select><br>
+                    </select><br><br>
                     <input type="file" name="song" required><br>
+                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea>
                     <input type="submit" name="send" value="Envoyer">
                 </form>
             </body>
