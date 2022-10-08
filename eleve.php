@@ -28,6 +28,7 @@ if ($_SESSION['connect']){
         # Préparation du tableau de donnée JSON
         $eleve_array = array(
                 $nomprenom => array(
+                    "nom" => $nom . " " . $prenom,
                     "classe" => $classe,
                     "fichier" => $good_file_name
                 )

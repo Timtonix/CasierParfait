@@ -7,8 +7,6 @@ if ($_SESSION['connect'] && $_SESSION['who'] == "prof"){
     $json_database = fread($mydatabase, filesize("./JSON/database.json"));
     $json_database_array = json_decode($json_database, true);
     fclose($mydatabase);
-    var_dump($json_database_array);
-
 
     ?>
     <html>
@@ -16,9 +14,18 @@ if ($_SESSION['connect'] && $_SESSION['who'] == "prof"){
             <body>
                 <h1>Bienvenue dans l'espace professeur !</h1>
                 <?php
-                echo $json_database_array["jacques_lol"]["fichier"];
+
+                foreach ($json_database_array as $eleve){
+                    ?>
+                    <br><label for="audio" style="font-weight: bold; font-size: 20px">Poème selon <?php echo $eleve['nom']; ?> :</label><br>
+                    <audio id="audio" controls>
+                        <source src="./stockage/<?php echo $eleve['fichier']; ?>">
+                    </audio>
+                    <?php
+                }
 
                 ?>
+                <audio src=""></audio>
             </body>
         </head>
     </html>
