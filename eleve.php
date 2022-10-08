@@ -19,7 +19,7 @@ if ($_SESSION['connect']){
 
 
         # Fichier
-        $target_dir = "stockage/";
+        $target_dir = "./stockage/";
         $temp_file_name = explode(".", $_FILES["song"]["name"]);
         $good_file_name = $nomprenom . "." . end($temp_file_name);
         $target_file = $target_dir . $good_file_name;
