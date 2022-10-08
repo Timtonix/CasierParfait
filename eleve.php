@@ -9,6 +9,7 @@ if ($_SESSION['connect']){
         $prenom = strtolower($_POST['prenom']);
         $classe = $_POST['classe'];
         $nomprenom = $nom . "_" . $prenom;
+        $message = $_POST['message'];
 
         # Base de donnée
         $mydatabase = fopen("./JSON/database.json", "r");
@@ -30,7 +31,8 @@ if ($_SESSION['connect']){
                 $nomprenom => array(
                     "nom" => $nom . " " . $prenom,
                     "classe" => $classe,
-                    "fichier" => $good_file_name
+                    "fichier" => $good_file_name,
+                    "message" => $message
                 )
         );
         $all_array = array_merge_recursive($json_database_array, $eleve_array);
@@ -67,11 +69,10 @@ if ($_SESSION['connect']){
                     <label for="prenom">Entrez votre prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
                     <label for="classe">Votre classe:</label>
                     <select name="classe" id="classe" required>
-                        <option value="jambon">--Veuillez choisir une classe--</option>
                         <option value="4">Seconde 4</option>
                     </select><br><br>
                     <input type="file" name="song" required><br>
-                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea>
+                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea><br>
                     <input type="submit" name="send" value="Envoyer">
                 </form>
             </body>

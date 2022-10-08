@@ -17,9 +17,9 @@ if ($_SESSION['connect'] && $_SESSION['who'] == "prof"){
 
                 foreach ($json_database_array as $eleve){
                     ?>
-                    <br><label for="audio" style="font-weight: bold; font-size: 20px">Poème selon <?php echo $eleve['nom']; ?> :</label><br>
+                    <br><label for="audio" style="font-weight: bold; font-size: 20px">Poème selon <?php echo htmlspecialchars($eleve['nom']); ?> :</label><br>
                     <audio id="audio" controls>
-                        <source src="./stockage/<?php echo $eleve['fichier']; ?>">
+                        <source src="./stockage/<?php echo htmlspecialchars($eleve['fichier']); ?>">
                     </audio>
                     <?php
                 }

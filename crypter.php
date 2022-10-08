@@ -13,7 +13,7 @@ $array = array_merge_recursive(json_decode($myjson, true), json_decode($myjson2,
 $json = json_encode($array);
 echo $myjson;
 echo"<br>";
-echo $json; */
+echo $json;
 
 
 // Encode some data with a maximum depth  of 4 (array -> array -> array -> string)
@@ -47,4 +47,7 @@ echo "<br>";
 $array = array_merge_recursive(json_decode($myjson1, true), json_decode($myjson2, true));
 $json = json_encode($array);
 echo $json;
+*/
+
+echo realpath("stockage/")
 ?>
