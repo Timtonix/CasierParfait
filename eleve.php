@@ -19,7 +19,7 @@ if ($_SESSION['connect']){
 
 
         # Fichier
-        $target_dir = "./stockage/";
+        $target_dir = "/home/timtonix/PhpstormProjects/CasierParfait/stockage/";
         $temp_file_name = explode(".", $_FILES["song"]["name"]);
         $good_file_name = $nomprenom . "." . end($temp_file_name);
         $target_file = $target_dir . $good_file_name;
@@ -50,9 +50,10 @@ if ($_SESSION['connect']){
         } else {
             if (move_uploaded_file($_FILES["song"]["tmp_name"], $target_file)) {
                 file_put_contents("./JSON/database.json", $all_json);
-                echo "The file ". htmlspecialchars($target_file). " has been uploaded.";
+                header('Location: ./success');
             } else {
                 echo "Sorry, there was an error uploading your file.";
+                move_uploaded_file($_FILES["song"]["tmp_name"], $target_file);
             }
         }
 

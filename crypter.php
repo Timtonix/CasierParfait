@@ -49,5 +49,6 @@ $json = json_encode($array);
 echo $json;
 */
 
-echo realpath("stockage/")
+echo realpath("stockage/");
+echo phpinfo();
 ?>
