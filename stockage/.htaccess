@@ -1,0 +1,4 @@
+AuthName "Accès administrateur requis"
+AuthType Basic
+AuthUserFile C:\Users\timto\PhpstormProjects\CasierParfait\stockage\.htpasswd
+Require valid-user
