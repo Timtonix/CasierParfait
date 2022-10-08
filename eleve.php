@@ -9,6 +9,7 @@ if ($_SESSION['connect']){
         $prenom = strtolower(trim($_POST['prenom']));
         $classe = $_POST['classe'];
         $nomprenom = $nom . "_" . $prenom;
+        $message = $_POST['message'];
 
         # Base de donnée
         $mydatabase = fopen("./JSON/database.json", "r");
@@ -34,7 +35,8 @@ if ($_SESSION['connect']){
                 time() => array(
                     "nom" => $nom . " " . $prenom,
                     "classe" => $classe,
-                    "fichier" => $good_file_name
+                    "fichier" => $good_file_name,
+                    "message" => $message
                 )
         );
         $all_array = array_merge_recursive($json_database_array, $eleve_array);
@@ -54,7 +56,7 @@ if ($_SESSION['connect']){
                 file_put_contents("./JSON/database.json", $all_json);
                 header("Location: ./success.php");
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $erreur = "Il y a eu une erreur durant l'upload !";
             }
         }
 
@@ -75,6 +77,8 @@ if ($_SESSION['connect']){
                     </select><br><br>
                     <textearea name="commentaire" id=""></textearea>
                     <input type="file" name="song" required><br><br>
+                    <label for="message">Entrez votre message :</label><br>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message !"></textarea><br>
                     <input type="submit" name="send" value="Envoyer">
                 </form>
                 <?php echo $erreur;?>
