@@ -72,7 +72,7 @@ if ($_SESSION['connect']){
                         <option value="4">Seconde 4</option>
                     </select><br><br>
                     <input type="file" name="song" required><br>
-                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea><br>
+                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea><br><br>
                     <input type="submit" name="send" value="Envoyer">
                 </form>
             </body>
