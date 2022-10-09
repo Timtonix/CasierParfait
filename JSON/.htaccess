@@ -1,4 +1,4 @@
 AuthName "Accès administrateur requis"
 AuthType Basic
-AuthUserFile C:\Users\timto\PhpstormProjects\CasierParfait\JSON\.htpasswd
+AuthUserFile /var/www/CasierParfait/JSON/.htpasswd
 Require valid-user
