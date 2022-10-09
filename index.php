@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+$erreur = "Bienvenue sur CasierParfait !";
 if(isset($_POST['passphrase'])){
     if($_POST['passphrase'] == "eleve2nd4!"){
         $_SESSION['who'] = "student";
@@ -26,12 +26,11 @@ if(isset($_POST['passphrase'])){
     </head>
     <body>
         <section>
-            <h1>Bienvenue sur CasierParfait ! </h1>
+            <h1><?php echo $erreur; ?></h1>
                 <form action="" method="post">
                     <input type="text" name="passphrase" placeholder="Entrez le mot de passe">
                     <input type="submit" name="send" value="Valider !">
                 </form>
-                <?php echo $erreur; ?>
         </section>
     </body>
 </html>
