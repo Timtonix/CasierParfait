@@ -31,5 +31,5 @@ if ($_SESSION['connect'] && $_SESSION['who'] == "prof"){
     </html>
     <?php
 } else{
-    header("Location: /CasierParfait/");
+    header("Location: ./index.php");
 }
