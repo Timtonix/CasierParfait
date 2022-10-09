@@ -5,10 +5,11 @@ session_start();
 if ($_SESSION['connect']){
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_FILES['song']) && isset($_POST['classe'])){
         # Variable
-        $nom = strtolower($_POST['nom']);
-        $prenom = strtolower($_POST['prenom']);
+        $nom = strtolower(trim($_POST['nom']));
+        $prenom = strtolower(trim($_POST['prenom']));
         $classe = $_POST['classe'];
         $nomprenom = $nom . "_" . $prenom;
+        $message = $_POST['message'];
 
         # Base de donnée
         $mydatabase = fopen("./JSON/database.json", "r");
@@ -16,9 +17,13 @@ if ($_SESSION['connect']){
         $json_database_array = json_decode($json_database, true);
         fclose($mydatabase);
 
+        if (in_array($nom, $json_database_array)){
+            $erreur = "Désolé mais votre fichier est déjà enregistré !";
+        }
+
 
         # Fichier
-        $target_dir = "./stockage/";
+        $target_dir = "stockage/";
         $temp_file_name = explode(".", $_FILES["song"]["name"]);
         $good_file_name = $nomprenom . "." . end($temp_file_name);
         $target_file = $target_dir . $good_file_name;
@@ -27,10 +32,11 @@ if ($_SESSION['connect']){
 
         # Préparation du tableau de donnée JSON
         $eleve_array = array(
-                $nomprenom => array(
+                time() => array(
                     "nom" => $nom . " " . $prenom,
                     "classe" => $classe,
-                    "fichier" => $good_file_name
+                    "fichier" => $good_file_name,
+                    "message" => $message
                 )
         );
         $all_array = array_merge_recursive($json_database_array, $eleve_array);
@@ -48,14 +54,14 @@ if ($_SESSION['connect']){
         } else {
             if (move_uploaded_file($_FILES["song"]["tmp_name"], $target_file)) {
                 file_put_contents("./JSON/database.json", $all_json);
-                echo "The file ". htmlspecialchars($target_file). " has been uploaded.";
+                header("Location: ./success.php");
             } else {
-                echo "Sorry, there was an error uploading your file.";
+                $erreur = "Il y a eu une erreur durant l'upload !";
             }
         }
 
     } else{
-        echo "Veuillez remplir le formulaire";
+        $erreur = "Veuillez remplir le formulaire";
     }
     ?>
     <html>
@@ -63,16 +69,19 @@ if ($_SESSION['connect']){
             <body>
                 <h1>Bienvenue élève !</h1>
                 <form action="" method="post" enctype="multipart/form-data">
-                    <label for="nom">Entrez votre nom : </label><input type="text" name="nom" id="nom" required><br>
-                    <label for="prenom">Entrez votre prénom : </label><input type="text" name="prenom" id="prenom" required><br><br>
-                    <label for="classe">Votre classe:</label>
+                    <label for="nom" style="font-weight: bold">Entrez votre NOM de famille : </label><input type="text" name="nom" id="nom" required><br><br>
+                    <label for="prenom" style="font-weight: bold">Entrez votre PRENOM : </label><input type="text" name="prenom" id="prenom" required><br><br>
+                    <label for="classe">Votre classe : </label>
                     <select name="classe" id="classe" required>
                         <option value="4">Seconde 4</option>
                     </select><br><br>
-                    <input type="file" name="song" required><br>
-                    <textarea name="commentaire" id="commentaire" cols="30" rows="10" placeholder="Entrez votre message"></textarea>
+                    <textearea name="commentaire" id=""></textearea>
+                    <input type="file" name="song" required><br><br>
+                    <label for="message">Entrez votre message :</label><br>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message !"></textarea><br>
                     <input type="submit" name="send" value="Envoyer">
                 </form>
+                <?php echo $erreur;?>
             </body>
         </head>
     </html>
