@@ -11,7 +11,7 @@ if(isset($_POST['passphrase'])){
         $_SESSION['connect'] = true;
         header('Location: prof.php');
     } else{
-        echo "Veuillez rentrez un mot de passe valide";
+        $_ERREUR = "Veuillez rentrez un mot de passe valide";
     }
 }
 ?>
