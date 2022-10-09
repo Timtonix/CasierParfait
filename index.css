@@ -1,0 +1,15 @@
+html{
+    background: rgb(255,184,77);
+    background: linear-gradient(0deg, rgba(255,184,77,1) 0%, rgba(77,148,255,1) 100%);
+}
+html, body{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    border: 1px solid red;
+    height: 100vh;
+}
+section{
+    border: 1px solid black;
+}
