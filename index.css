@@ -19,6 +19,8 @@ section{
     width: 400px;
     height: 250px;
     box-shadow: 0 1px 2px 0 rgba(80,87,91,.13);
+    position: relative;
+    top: -20px;
 }
 section h1{
     margin-top: 30px;
@@ -59,5 +61,6 @@ input[type=submit]{
 input[type=submit]:hover{
     background-color: #1b5fb8;
 }
+
 
 
