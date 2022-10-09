@@ -11,7 +11,7 @@ if(isset($_POST['passphrase'])){
         $_SESSION['connect'] = true;
         header('Location: prof.php');
     } else{
-        $_ERREUR = "Veuillez rentrez un mot de passe valide";
+        $erreur = "Veuillez rentrez un mot de passe valide";
     }
 }
 ?>
@@ -31,6 +31,7 @@ if(isset($_POST['passphrase'])){
                     <input type="text" name="passphrase" placeholder="Entrez le mot de passe">
                     <input type="submit" name="send" value="Valider !">
                 </form>
+                <?php echo $erreur; ?>
         </section>
     </body>
 </html>
