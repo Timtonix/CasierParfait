@@ -22,7 +22,7 @@ if(isset($_POST['passphrase'])){
         <meta charset="utf-8" />
         <title>Casier Parfait </title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />  
-        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="css/pages/index.css">
     </head>
     <body>
         <section>

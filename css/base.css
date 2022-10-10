@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-Medium.ttf');
+}
+html{
+    background: rgb(255,184,77);
+    background: linear-gradient(0deg, rgba(255,184,77,1) 0%, rgba(77,148,255,1) 100%);
+}
+html, body{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    height: 100vh;
+}
