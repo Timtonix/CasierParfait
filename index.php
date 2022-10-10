@@ -2,7 +2,7 @@
 session_start();
 $erreur = "Bienvenue sur CasierParfait !";
 if(isset($_POST['passphrase'])){
-    if($_POST['passphrase'] == "eleve2nd4!"){
+    if($_POST['passphrase'] === "eleve2nd4!"){
         $_SESSION['who'] = "student";
         $_SESSION['connect'] = true;
         header('Location: eleve.php');
