@@ -17,12 +17,13 @@ section{
     background-color: white;
     border-radius: 8px;
     width: 400px;
-    height: 250px;
+    height: auto;
     box-shadow: 0 1px 2px 0 rgba(80,87,91,.13);
     position: relative;
     top: -20px;
 }
 section h1{
+    font-size: 1.4em;
     margin-top: 30px;
     font-family: "Rubik";
     text-align: center;
@@ -33,8 +34,8 @@ form{
     align-items: center;
 }
 input[type=text]{
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 6px;
+    margin-bottom: 20px;
     background: none;
     border: 1px solid #dadce0;
     border-radius: 4px;
@@ -53,6 +54,7 @@ input[type=submit]{
     font-size: 14px;
     background-color: #1a73e8;
     color: whitesmoke;
+    margin-bottom: 20px;
     box-shadow: none;
     border: none;
     padding: 10px;
