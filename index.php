@@ -28,7 +28,7 @@ if(isset($_POST['passphrase'])){
         <section>
             <h1><?php echo $erreur; ?></h1>
                 <form action="" method="post">
-                    <input type="text" name="passphrase" placeholder="Entrez le mot de passe">
+                    <input type="password" name="passphrase" placeholder="Entrez le mot de passe">
                     <input type="submit" name="send" value="Valider !">
                 </form>
         </section>
