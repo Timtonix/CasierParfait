@@ -64,27 +64,33 @@ if ($_SESSION['connect']){
         $erreur = "Veuillez remplir le formulaire";
     }
     ?>
+
+    <!DOCTYPE html>
     <html>
         <head>
-            <body>
-                <h1>Bienvenue élève !</h1>
-                <form action="" method="post" enctype="multipart/form-data">
-                    <label for="nom" style="font-weight: bold">Entrez votre NOM de famille : </label><input type="text" name="nom" id="nom" required><br><br>
-                    <label for="prenom" style="font-weight: bold">Entrez votre PRENOM : </label><input type="text" name="prenom" id="prenom" required><br><br>
-                    <label for="classe">Votre classe : </label>
-                    <select name="classe" id="classe" required>
-                        <option value="4">Seconde 4</option>
-                    </select><br><br>
-                    <textearea name="commentaire" id=""></textearea>
-                    <input type="file" name="song" required><br><br>
-                    <label for="message">Entrez votre message :</label><br>
-                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message !"></textarea><br>
-                    <input type="submit" name="send" value="Envoyer">
-                </form>
-                <?php echo $erreur;?>
-            </body>
+            <meta charset="utf-8" />
+            <title>Casier Parfait </title>
+            <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
         </head>
+        <body>
+            <h1>Bienvenue élève !</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                <label for="nom" style="font-weight: bold">Entrez votre NOM de famille : </label><input type="text" name="nom" id="nom" required><br><br>
+                <label for="prenom" style="font-weight: bold">Entrez votre PRENOM : </label><input type="text" name="prenom" id="prenom" required><br><br>
+                <label for="classe">Votre classe : </label>
+                <select name="classe" id="classe" required>
+                    <option value="4">Seconde 4</option>
+                </select><br><br>
+                <textearea name="commentaire" id=""></textearea>
+                <input type="file" name="song" required><br><br>
+                <label for="message">Entrez votre message :</label><br>
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message !"></textarea><br>
+                <input type="submit" name="send" value="Envoyer">
+            </form>
+        <?php echo $erreur;?>
+        </body>
     </html>
+
     <?php
 } else{
     header('Location: /CasierParfait');
