@@ -1,4 +1,4 @@
-@import url(../base.css);
+@import url(/css/base.css);
 body{
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ form{
     flex-direction: column;
     align-items: center;
 }
-input[type=text]{
+input[type=password]{
     margin-top: 6px;
     margin-bottom: 20px;
     background: none;
@@ -36,7 +36,7 @@ input[type=text]{
     width: 200px;
     padding: 13px 15px;
 }
-input[type=text]:focus{
+input[type=password]:focus{
     border: 1px solid rgba(77,148,255,1);
     outline:  none;
 }
@@ -66,12 +66,12 @@ input[type=submit]:hover{
     section h1{
         font-size: 1.2em;
     }
-    input[type=text]{
+    input[type=password]{
         width: 170px;
     }
 }
 @media(max-width: 260px){
-    input[type=text]{
+    input[type=password]{
         font-size: 14px;
         width: 150px;
         padding: 10px 12px;
