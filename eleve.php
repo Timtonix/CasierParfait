@@ -71,7 +71,6 @@ if ($_SESSION['connect']){
             <meta charset="utf-8" />
             <title>Casier Parfait </title>
             <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
-            <link rel="stylesheet" href="css/pages/index.css">
         </head>
         <body>
             <h1>Bienvenue élève !</h1>
