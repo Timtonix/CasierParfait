@@ -21,6 +21,8 @@ if ($_SESSION['connect'] && $_SESSION['who'] == "prof"){
                     <audio id="audio" controls>
                         <source src="./stockage/<?php echo htmlspecialchars($eleve['fichier']); ?>">
                     </audio>
+                    <p>Et voici leur message :</p>
+                    <p><?php echo htmlspecialchars($eleve["message"]); ?></p>
                     <?php
                 }
 
