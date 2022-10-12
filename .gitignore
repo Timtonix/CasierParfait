@@ -1,4 +1,6 @@
 *.htpasswd
 *.htaccess
-/JSON/*.htpasswd
-/JSON/*.htaccess
+./JSON/*.htpasswd
+./JSON/*.htaccess
+./JSON/database.json
+./stockage/*
