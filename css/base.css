@@ -12,6 +12,42 @@ html, body{
 }
 body {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section{
+    background-color: white;
+    border-radius: 8px;
+    height: auto;
+    box-shadow: 0 1px 2px 0 rgba(80,87,91,.13);
+}
+section h1{
+    font-size: 1.4em;
+    margin-top: 30px;
+    font-family: "sans-serif";
+    text-align: center;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input[type=password], input[type=text]{
+    margin-top: 6px;
+    margin-bottom: 20px;
+    background: none;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    color: #757575;
+    font-size: 16px;
+    height: 12px;
+    width: 200px;
+    padding: 13px 15px;
+}
+input[type=password]:focus, input[type=text]:focus{
+    border: 1px solid rgba(77,148,255,1);
+    outline:  none;
 }
 input[type=submit]{
     font-family: "sans-serif";
