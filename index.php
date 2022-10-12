@@ -1,6 +1,6 @@
 <?php
 session_start();
-$erreur = "Bienvenue sur CasierParfait !";
+$erreur = "Bienvenue sur CasierParfait";
 if(isset($_POST['passphrase'])){
     if($_POST['passphrase'] === "eleve2nd4!"){
         $_SESSION['who'] = "student";
@@ -20,7 +20,7 @@ if(isset($_POST['passphrase'])){
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Casier Parfait </title>
+        <title>Casier Parfait</title>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />  
         <link rel="stylesheet" href="css/pages/index.css">
     </head>
