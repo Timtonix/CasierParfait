@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+$erreur = "Bienvenue élève";
 # Vérification de la connexion
 if ($_SESSION['connect']){
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_FILES['song']) && isset($_POST['classe'])){
@@ -61,7 +62,7 @@ if ($_SESSION['connect']){
         }
 
     } else{
-        $erreur = "Veuillez remplir le formulaire";
+        $erreur = "Bienvenue élève";
     }
     ?>
 
@@ -71,23 +72,25 @@ if ($_SESSION['connect']){
             <meta charset="utf-8" />
             <title>Casier Parfait </title>
             <meta name="viewport" content="initial-scale=1.0, user-scalable=yes" />
+            <link rel="stylesheet" href="css/pages/eleve.css">
         </head>
         <body>
-            <h1>Bienvenue élève !</h1>
-            <form action="" method="post" enctype="multipart/form-data">
-                <label for="nom" style="font-weight: bold">Entrez votre NOM de famille : </label><input type="text" name="nom" id="nom" required><br><br>
-                <label for="prenom" style="font-weight: bold">Entrez votre PRENOM : </label><input type="text" name="prenom" id="prenom" required><br><br>
-                <label for="classe">Votre classe : </label>
-                <select name="classe" id="classe" required>
-                    <option value="4">Seconde 4</option>
-                </select><br><br>
-                <textearea name="commentaire" id=""></textearea>
-                <input type="file" name="song" required><br><br>
-                <label for="message">Entrez votre message :</label><br>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Entrez votre message !"></textarea><br>
-                <input type="submit" name="send" value="Envoyer">
-            </form>
-        <?php echo $erreur;?>
+            <section>
+                <h1><?php echo $erreur;?></h1>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <label for="nom" style="font-weight: bold">Entrez votre nom de famille : </label><input type="text" name="nom" id="nom" required>
+                    <label for="prenom" style="font-weight: bold">Entrez votre prenom : </label><input type="text" name="prenom" id="prenom" required>
+                    <div id="votreclasse">
+                        <label for="classe">Votre classe : </label>
+                        <select name="classe" id="classe" required>
+                            <option value="4">Seconde 4</option>
+                        </select>
+                    </div>
+                    <input type="file" name="song" required/>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Vous pouvez ajouter un message !"></textarea>
+                    <input type="submit" name="send" value="Envoyer">
+                </form>
+            </section>
         </body>
     </html>
 
