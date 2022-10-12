@@ -24,22 +24,7 @@ form{
     flex-direction: column;
     align-items: center;
 }
-input[type=password]{
-    margin-top: 6px;
-    margin-bottom: 20px;
-    background: none;
-    border: 1px solid #dadce0;
-    border-radius: 4px;
-    color: #757575;
-    font-size: 16px;
-    height: 12px;
-    width: 200px;
-    padding: 13px 15px;
-}
-input[type=password]:focus{
-    border: 1px solid rgba(77,148,255,1);
-    outline:  none;
-}
+
 @media(max-width: 424px){
     section{
         width: auto;
